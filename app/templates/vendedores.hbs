@@ -1,0 +1,27 @@
+<table>
+        <thead>
+          <tr>
+              <th>Nombre</th>
+              <th>Apellidos</th>
+              <th>Usuario</th>
+              <th></th>
+          </tr>
+        </thead>
+
+        <tbody>
+
+          {{#each model as |vendedor|}}
+            <tr>
+              <td>{{vendedor.nombre}}</td>
+              <td>{{vendedor.apellidos}}</td>
+              <td>{{vendedor.usuario}}</td>
+              <td><button {{action 'borrarVendedor' vendedor}}>Borrar</button></td>
+            </tr>
+
+
+          {{else}}
+          No hay vendedores 
+
+          {{/each}}
+        </tbody>
+      </table>

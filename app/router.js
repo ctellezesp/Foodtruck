@@ -7,6 +7,10 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
+  this.route('login');
+  this.route('agregar_vendedor');
+  this.route('panel');
+  this.route('vendedores');
 });
 
 export default Router;

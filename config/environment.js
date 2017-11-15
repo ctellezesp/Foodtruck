@@ -7,6 +7,17 @@ module.exports = function(environment) {
     environment,
     rootURL: '/',
     locationType: 'auto',
+    firebase: {
+      apiKey: "AIzaSyDzsEckevKbBWlrjT2B01D_GKFfD3pH6TA",
+    authDomain: "foodtruc-eaba2.firebaseapp.com",
+    databaseURL: "https://foodtruc-eaba2.firebaseio.com",
+    projectId: "foodtruc-eaba2",
+    storageBucket: "foodtruc-eaba2.appspot.com",
+    messagingSenderId: "1001841444057"
+    },
+    torii: {
+      sessionServiceName: 'session'
+    },
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build

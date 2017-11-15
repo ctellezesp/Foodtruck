@@ -1,0 +1,22 @@
+ <div class="row" style="margin-top: 10%;">
+  <div class="col m2 l4"></div>
+    <div class="col s12 m8 l4 white">
+      <h3 class="center-align" style="font-family: 'Lobster', sans-serif;">Food Truck</h3>
+      <form class="col s12">
+      <div class="row">
+        <div class="input-field col s12">
+          <i class="material-icons prefix">account_circle</i>
+          {{input type="text" class="validate" value=user}}
+          <label for="usuario">Usuario</label>
+        </div>
+      </div>
+        <div class="input-field col s12">
+          <i class="material-icons prefix">vpn_key</i>
+          {{input type="password" class="validate" value=pass}}
+          <label for="contrasena">Contraseña</label>
+        </div>
+      <div class="center-align"><a {{action 'signIn' user pass}} class="waves-effect waves-light btn blue"><i class="material-icons right">done</i>Entrar</a></div>
+    </form>
+    </div>
+    <div class="col m2 l4"></div>
+</div>
