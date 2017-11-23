@@ -1,0 +1,20 @@
+{
+  "name": "foodtruck-api",
+  "description": "Small description for foodtruck-api goes here",
+  "main": "",
+  "authors": [
+    "Roberto Yoc <A01172599@itesm.mx>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/ctellezesp/Foodtruck",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "materialize": "^0.100.2"
+  }
+}

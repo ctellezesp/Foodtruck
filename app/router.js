@@ -15,8 +15,10 @@ Router.map(function() {
   this.route('editar', { path: "/edit/:vendorid"});
   this.route('agregar_pregunta');
   this.route('preguntas');
-  this.route('editar_pregunta');
+  this.route('editar_pregunta', {path: "/pregunta/:pregid"});
   this.route('agregar_paquete');
+  this.route('paquetes');
+  this.route('paquete', {path: "/paquete/:packid"});
 });
 
 export default Router;

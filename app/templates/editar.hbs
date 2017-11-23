@@ -1,6 +1,5 @@
 {{em-smenu}}
 
-{{#em-wrapper query="Materialize" method="updateTextFields"}}
  <div class="row" style="margin-top: 2%;">
   <div class="col s12 m6 offset-m3">
     <div class="row">
@@ -38,10 +37,8 @@
           <label class="active" for="telefono">Telefono</label>
         </div>
       </div>
-      {{#link-to "info-vendedor" action "save" model class="waves-effect waves-light btn right blue"}}<i class="material-icons left">done</i>Confirmar
-      {{/link-to}} 
+      <a class="waves-effect waves-light btn right blue" {{action 'save' model}}><i class="material-icons left">done</i>Confirmar</a>
     </form>
   </div>
   </div>
  </div>
- {{/em-wrapper}}

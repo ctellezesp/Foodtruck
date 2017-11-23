@@ -1,37 +1,32 @@
 {{em-smenu}}
 <div class="row">
-<div class="col s12 m8 offset-m2">
-<table>
-        <thead>
+  <div class="col s12 m8 offset-m2">
+    <table>
+      <thead>
+        <tr>
+          <th>Numero</th>
+          <th>Pregunta</th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each model as |pregunta index|}}
           <tr>
-              <th>Numero</th>
-              <th>Pregunta</th>
-              <th></th>
-              <th></th>
+            <td>{{index}}</td>
+            <td>{{pregunta.texto}}</td>
+            <td><a class="btn-floating btn-large waves-effect waves-light grey darken-2" style="margin-right: 10%;" {{action 'borrar' pregunta}}><i class="material-icons">delete</i></a>
+            </td>
+            <td>
+              {{#link-to "editar_pregunta" pregunta.id class="btn-floating btn-large waves-effect waves-light grey darken-2" }}
+                <i class="material-icons">create</i>
+              {{/link-to}}
+            </td>
           </tr>
-        </thead>
-
-        <tbody>
-
-          {{#each model as |pregunta|}}
-            <tr>
-              <td>{{pregunta.numero}}</td>
-              <td>{{pregunta.valor}}</td>
-              <td><a class="btn-floating btn-large waves-effect waves-light grey darken-2" style="margin-right: 10%;" {{action 'borrarVendedor'}}><i class="material-icons">delete</i></a>
-
-                 {{#link-to "info_vendedor" pregunta.id class="btn-floating btn-large waves-effect waves-light grey darken-2"}}
-                  <i class="material-icons">create</i>
-                {{/link-to}}               
-
-              </td>
-            </tr>
-
-
           {{else}}
-          No hay preguntas disponibles 
-
-          {{/each}}
-        </tbody>
-      </table>
-</div>
+            No hay preguntas disponibles
+        {{/each}}
+      </tbody>
+    </table>
+  </div>
 </div>

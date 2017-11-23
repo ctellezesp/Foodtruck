@@ -1,0 +1,11 @@
+{{em-smenu}}
+
+<ul>
+
+{{#each model as |paquete|}}
+	<li>{{paquete.nombre}} cuesta {{paquete.precio}} - <button {{action 'borrar' paquete}}>Borrar</button>--<button {{action "editar" paquete}}>Editar</button></li>
+	{{else}}
+	aun no hay paquetes
+{{/each}}
+
+</ul>

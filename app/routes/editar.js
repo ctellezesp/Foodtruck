@@ -8,7 +8,9 @@ export default Ember.Route.extend({
 	},
 	actions: {
 		save(vendedor){
-			vendedor.save();
+			vendedor.save().then(()=>{
+				this.transitionTo('info_vendedor', vendedor.get('id'))
+			})
 		}
 	}
 });
