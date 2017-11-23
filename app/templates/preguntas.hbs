@@ -4,9 +4,8 @@
 <table>
         <thead>
           <tr>
-              <th>Nombre</th>
-              <th>Apellidos</th>
-              <th>Usuario</th>
+              <th>Numero</th>
+              <th>Pregunta</th>
               <th></th>
               <th></th>
           </tr>
@@ -14,14 +13,13 @@
 
         <tbody>
 
-          {{#each model as |vendedor|}}
+          {{#each model as |pregunta|}}
             <tr>
-              <td>{{vendedor.nombre}}</td>
-              <td>{{vendedor.apellidos}}</td>
-              <td>{{vendedor.usuario}}</td>
+              <td>{{pregunta.numero}}</td>
+              <td>{{pregunta.valor}}</td>
               <td><a class="btn-floating btn-large waves-effect waves-light grey darken-2" style="margin-right: 10%;" {{action 'borrarVendedor'}}><i class="material-icons">delete</i></a>
 
-                 {{#link-to "info_vendedor" vendedor.id class="btn-floating btn-large waves-effect waves-light grey darken-2"}}
+                 {{#link-to "info_vendedor" pregunta.id class="btn-floating btn-large waves-effect waves-light grey darken-2"}}
                   <i class="material-icons">create</i>
                 {{/link-to}}               
 
@@ -30,7 +28,7 @@
 
 
           {{else}}
-          No hay vendedores 
+          No hay preguntas disponibles 
 
           {{/each}}
         </tbody>

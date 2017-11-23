@@ -1,0 +1,31 @@
+{{em-smenu}}
+<div class="row">
+<div class="col s12 m8 offset-m2">
+<table>
+        <tbody>
+            <tr>
+              <td><i class="material-icons" style="margin-right: 1%;">account_circle</i>Nombre: </td>	
+              <td>{{model.nombre}}</td>
+            </tr>
+            <tr>
+              <td><i class="material-icons" style="margin-right: 1%;">account_circle</i>Apellidos: </td>	
+              <td>{{model.apellidos}}</td>
+            </tr>
+            <tr>
+              <td><i class="material-icons" style="margin-right: 1%;">person</i>Usuario: </td>	
+              <td>{{model.usuario}}</td>
+            </tr>
+            <tr>
+              <td><i class="material-icons" style="margin-right: 1%;">place</i>Dirección: </td>	
+              <td>{{model.direccion}}</td>
+            </tr>
+            <tr>
+              <td><i class="material-icons" style="margin-right: 1%;">phone</i>Telefono: </td>	
+              <td>{{model.telefono}}</td>
+            </tr>
+        </tbody>
+      </table>
+      {{#link-to "editar" model.id class="waves-effect waves-light btn grey darken-2 right"}}<i class="material-icons right">create</i>Editar
+      {{/link-to}}      
+</div>
+</div>
