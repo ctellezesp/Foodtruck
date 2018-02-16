@@ -1,0 +1,34 @@
+{{em-vmenu}}
+
+<div class="row"> 
+	<div class="col s12 m8 offset-m2">
+		<h4 class="center-align">Paquete: {{model.nombre}}</h4>
+		<b class="center-align">Precio: {{model.precio}}</b>
+		<h6>Ingredientes:</h6>
+    <div class="row">
+   <form class="col s12 m6" action="#">
+    {{log model}}
+   	{{#each model.paquete.ingredientes as |ingrediente index|}}
+    {{#unless ingrediente.isExtra}}
+    <p>
+      {{input type="checkbox" id=ingrediente.id change=(action 'changed' ingrediente)}}
+      <label for="{{ingrediente.id}}">{{ingrediente.nombre}}</label>
+    </p>
+    {{/unless}}
+    {{/each}}
+  </form>
+  <form class="col s12 m6" action="#">
+    <h6>Ingredientes extra:</h6>
+      {{#each model.paquete.ingredientes as |ingrediente| }}
+    {{#if ingrediente.isExtra}}
+    <p>
+      {{input type="checkbox" id=ingrediente.id change=(action 'changed' ingrediente)}}
+      <label for="{{ingrediente.id}}">{{ingrediente.nombre}}</label>
+    </p>
+    {{/if}}
+    {{/each}}
+  </form>
+</div>
+  <a {{action 'savePedido' model}}class="waves-effect waves-light btn right"><i class="material-icons right">done</i>Realizar pedido</a>
+</div>
+</div>

@@ -1,11 +1,27 @@
 {{em-smenu}}
-
-<ul>
-
-{{#each model as |paquete|}}
-	<li>{{paquete.nombre}} cuesta {{paquete.precio}} - <button {{action 'borrar' paquete}}>Borrar</button>--<button {{action "editar" paquete}}>Editar</button></li>
-	{{else}}
-	aun no hay paquetes
-{{/each}}
-
-</ul>
+<div class="row">
+<div class="col s12 m8 offset-m2">
+{{#init-component c="collapsible"}}
+<ul class="collapsible" data-collapsible="accordion">
+	{{#each model as |paquete|}}
+    <li>
+      <div class="collapsible-header"><i class="material-icons">restaurant</i>{{paquete.nombre}}</div>
+      <div class="collapsible-body"><b>Precio: ${{paquete.precio}}</b><br>
+        <span>URL: {{paquete.imagen}}</span>
+      	<p>Ingredientes: </p>
+      	{{#each paquete.ingredientes as |ingrediente|}}
+        {{#unless ingrediente.isExtra}}
+      	<li>{{ingrediente.nombre}}</li>
+        {{/unless}}
+      	{{/each}}
+      	<a class="waves-effect waves-light btn right" {{action "editar" paquete}} style="margin-left: 3%;"><i class="material-icons right">edit</i>Editar</a>
+      	<a class="waves-effect waves-light btn right red" {{action 'borrar' paquete}}><i class="material-icons right">delete</i>Eliminar</a>
+      	</div>
+    </li>
+    {{else}}
+    No hay paquetes disponibles
+    {{/each}}
+  </ul>
+{{/init-component}}
+</div>
+</div>

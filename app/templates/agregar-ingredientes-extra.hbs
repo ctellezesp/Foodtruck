@@ -1,0 +1,32 @@
+{{em-smenu}}
+<div class="row">
+	<div class="col s12 m6 offset-m3">
+
+    <h2>{{model.nombre}}</h2>
+    {{log model}}
+  <div class="col s12 m8 offset-m2">
+          <h5 class="center-align">Ingredientes</h5>
+          <ul>
+        {{#each model.ingredientes as |ingrediente|}}
+        {{#unless ingrediente.isExtra}}
+        <li>{{ingrediente.nombre}}</li>
+
+        {{/unless}}
+        {{/each}}
+      </ul>
+          <div class="row">
+          <div class="input-field col s12">
+            {{#each model.ingredientes as |ingrediente|}}
+            {{#if ingrediente.isExtra}}
+              <i class="material-icons prefix">restaurant</i> 
+              {{input type="text" class="validate" value=ingrediente.nombre}}
+              <label></label>
+              {{/if}}
+            {{/each}}
+          </div>
+      </div>
+        </div>
+        <a {{action 'agregar' model}}class="waves-effect waves-light btn left brown"><i class="material-icons left">done</i>Agregar Ingrediente</a>
+        <a {{action "save" model}} class="waves-effect waves-light btn right blue"><i class="material-icons left">done</i>Registrar</a>
+    </div>
+</div>

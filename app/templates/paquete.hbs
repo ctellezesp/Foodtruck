@@ -13,13 +13,19 @@
             <label for="icon_prefix">Precio</label>
           </div>
         </div>
+        <div class="input-field col s12">
+            <i class="material-icons prefix">imagen</i> {{input type="text" class="validate" value=model.imagen}}
+            <label for="icon_prefix">URL</label>
+          </div>
         <div class="row">
           <h5 class="center-align">Ingredientes</h5>
           <div class="input-field col s12">
             {{#each model.ingredientes as |ingrediente|}}
+              {{#unless ingrediente.isExtra}}
               <i class="material-icons prefix">restaurant</i> 
               {{input type="text" class="validate" value=ingrediente.nombre}}
               <label for="icon_prefix"></label>
+              {{/unless}}
             {{/each}}
           </div>
         </div>

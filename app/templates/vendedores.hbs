@@ -19,7 +19,7 @@
               <td>{{vendedor.nombre}}</td>
               <td>{{vendedor.apellidos}}</td>
               <td>{{vendedor.usuario}}</td>
-              <td><a class="btn-floating btn-large waves-effect waves-light grey darken-2" style="margin-right: 10%;" {{action 'borrarVendedor'}}><i class="material-icons">delete</i></a>
+              <td><a class="btn-floating btn-large waves-effect waves-light grey darken-2" style="margin-right: 10%;" {{action 'borrarVendedor' vendedor}}><i class="material-icons">delete</i></a>
 
                  {{#link-to "info_vendedor" vendedor.id class="btn-floating btn-large waves-effect waves-light grey darken-2"}}
                   <i class="material-icons">create</i>

@@ -19,6 +19,12 @@ Router.map(function() {
   this.route('agregar_paquete');
   this.route('paquetes');
   this.route('paquete', {path: "/paquete/:packid"});
+  this.route('panel_vendedor', {path: "/vender"});
+  this.route('panel_paquetes', {path: '/:venta_id/agregar'});
+  this.route('hacer_pedido', {path: "/:pedido_id/addPaquete/"});
+  this.route('info_pedido');
+  this.route('agregar_ingredientesExtra', {path: "/extra/:packid"});
+  this.route('ing_extra');
 });
 
 export default Router;

@@ -6,7 +6,9 @@ export default Ember.Route.extend({
 
 	model(){
 		let paquete = this.get('store').createRecord('paquete');
-		paquete.get('ingredientes').createRecord();
+		paquete.get('ingredientes').createRecord({
+			isExtra: false
+		});
 		return paquete;
 	}
 });

@@ -6,7 +6,9 @@ export default Ember.Controller.extend({
 	store: service(),
 	actions: {
 		agregar(paquete){
-			paquete.get('ingredientes').createRecord();
+			paquete.get('ingredientes').createRecord({
+				isExtra: false
+			});
 		},
 		save(paquete){
 			all(paquete.get('ingredientes').invoke('save')).then(()=>{
